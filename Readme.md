@@ -1,6 +1,6 @@
 ## Contact Form to Google Sheets
 
-> This application enables you take input from a website contact form and saves to a google sheets document.
+> This application enables you save input from a website contact form to a google sheets document.
 > Backend validation is done with yup, the schema replicates what is existent at the front end.
 > I also included google's recaptcha v3 
 
