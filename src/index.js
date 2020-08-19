@@ -16,3 +16,5 @@ app.use("/submit", submitRoute);
 
 app.listen(PORT);
 console.log(`Sheets server listening at ${HOST}:${PORT}`);
+
+export { PORT, HOST };
