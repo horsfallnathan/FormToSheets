@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const { updateSheet } = require("./updateSheet");
 router.post("/", Submit);
-const schema = require("../utils/yup.schema");
+const schema = require("../utils/public.yup.schema");
 const secret_key = process.env.RECAPTCHA_SECRET_KEY;
 
 function Submit(req, res, next) {
