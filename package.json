@@ -8,8 +8,8 @@
     "build": "babel src -d dist",
     "start": "npm run build && nodemon dist/index.js",
     "serve": "node dist/index.js",
-    "test": "jest --config ./src/tests/jest.config.json",
-    "test:watch": "npm run test -- --watch"
+    "test": "NODE_ENV=test jest --config ./src/tests/jest.config.json",
+    "test:watch": "npm run test -- --watchAll"
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
@@ -27,7 +27,9 @@
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "jest": "^26.4.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "superagent": "^6.0.0",
+    "supertest": "^4.0.2"
   },
-  "license": "MIT"
+  "license": "ISC"
 }

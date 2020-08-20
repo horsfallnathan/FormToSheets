@@ -11,10 +11,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const submitRoute = require("./controls/submit.routes");
+app.get("/test", (req, res) => {
+  res.status(200).send("Hello World!");
+});
+
+const { router: submitRoute } = require("./controls/submit.routes");
 app.use("/submit", submitRoute);
 
-app.listen(PORT);
-console.log(`Sheets server listening at ${HOST}:${PORT}`);
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT);
+  console.log(`Sheets server listening at ${HOST}:${PORT}`);
+}
 
-export { PORT, HOST };
+export { app };

@@ -17,7 +17,10 @@ function Submit(req, res, next) {
       return response.data;
     })
     .then((response) => {
-      if (response.success !== true) throw new Error("captcha failed");
+      if (response.success !== true) {
+        console.log("err");
+        throw new Error("captcha failed");
+      }
     })
     .then(() => {
       schema.isValid(data).then(() => {
@@ -35,4 +38,4 @@ function Submit(req, res, next) {
     });
 }
 
-module.exports = router;
+export { router, Submit };

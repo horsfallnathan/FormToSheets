@@ -1,13 +1,12 @@
-import { PORT, HOST } from "../index";
+const request = require("supertest");
+const { app } = require("../index");
 
-describe("Port is defined", () => {
-  it("Port is defined", () => {
-    expect(PORT).toBeDefined();
-  });
-});
-
-describe("Host is defined", () => {
-  it("Host is defined", () => {
-    expect(HOST).toBeDefined();
+describe("Test app object", () => {
+  test("It should return 200 status", () => {
+    return request(app)
+      .get("/test")
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+      });
   });
 });
